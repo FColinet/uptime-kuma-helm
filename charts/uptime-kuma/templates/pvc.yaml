@@ -4,6 +4,10 @@ kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
   name: {{ include "uptime-kuma.fullname" . }}-pvc
+  {{- with .Values.volume.annotations }}
+  annotations:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
   labels:
     {{- include "uptime-kuma.labels" . | nindent 4 }}
 spec:

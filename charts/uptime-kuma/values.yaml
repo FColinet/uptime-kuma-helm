@@ -124,6 +124,8 @@ volume:
   # storageClassName:
   # Reuse your own pre-existing PVC.
   existingClaim: ""
+  # -- Additional annotations to add to the PVC
+  annotations: {}
 
 # -- A list of additional volumes to be added to the pod
 additionalVolumes:
